@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-white bg-opacity-80 backdrop-blur-md border border-white border-opacity-20 shadow-glass;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F8FAFC;
+  background-image: radial-gradient(circle at top right, #E0F2FE 0%, transparent 40%),
+                    radial-gradient(circle at bottom left, #E0F7FA 0%, transparent 40%);
+  background-attachment: fixed;
+  color: #1E293B;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}

@@ -6,7 +6,7 @@ const FloatingContact = () => {
   return (
     <div className="fixed bottom-6 left-0 right-0 px-4 z-50 md:hidden flex justify-center pointer-events-none">
       <motion.a
-        href="tel:9753759805"
+        href="tel:7523809746"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
@@ -19,8 +19,8 @@ const FloatingContact = () => {
             <Phone size={18} className="relative z-10" />
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-1">Clinic Contact</span>
-            <span className="text-[15px] font-bold text-slate-800 leading-none">9753759805</span>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-1">Hospital Contact</span>
+            <span className="text-[15px] font-bold text-slate-800 leading-none">+91 7523809746</span>
           </div>
         </div>
         

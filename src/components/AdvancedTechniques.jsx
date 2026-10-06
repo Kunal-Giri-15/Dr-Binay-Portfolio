@@ -14,10 +14,10 @@ const AdvancedTechniques = () => {
         className="text-center mb-8"
       >
         <div className="text-xs font-bold tracking-[0.2em] text-primary uppercase mb-3">
-          Scientific Practice
+          State-of-the-Art Equipment
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight max-w-md mx-auto">
-          Advanced Techniques for Faster Recovery
+          Advanced Laparoscopic Surgery for Faster Recovery
         </h2>
       </motion.div>
 
@@ -30,7 +30,7 @@ const AdvancedTechniques = () => {
       >
         <img 
           src={DUMMY_VIDEO_THUMBNAIL} 
-          alt="Physiotherapy treatment" 
+          alt="Advanced Laparoscopic OT & Surgical Equipment" 
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
         
@@ -48,10 +48,10 @@ const AdvancedTechniques = () => {
         <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8">
           <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 shadow-xl">
             <h3 className="font-semibold text-slate-800 text-sm sm:text-base mb-2">
-              Patient Success Story
+              Cutting-Edge Surgical Technology
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              See how we helped an Olympic sprinter return to the track after a severe ACL injury.
+              HD 3-Chip Laparoscopy Stack, Harmonic Scalpel & Modular Laminar-Flow OT - the same standards you would find in top metro hospitals, right here in Rajgarh.
             </p>
           </div>
         </div>

@@ -59,7 +59,7 @@ const Hero = () => {
               className="text-base sm:text-lg md:text-xl text-slate-600 mb-4 lg:mb-8 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed"
               variants={itemVariants}
             >
-              Expert physiotherapy care focused on recovery, mobility, and long-term wellness. Bridging clinical precision with empathetic rehabilitation care.
+              Expert laparoscopic & general surgical care at Vishwas Surgical Hospital, Rajgarh. Modern, evidence-based surgery — so you don't have to travel to a metro city.
             </motion.p>
 
             <motion.div
@@ -98,7 +98,7 @@ const Hero = () => {
               >
                 <img
                   src={DUMMY_DOCTOR_IMAGE}
-                  alt="Dr. Pratik Giri"
+                  alt="Dr. Binay Mourya"
                   className="h-full object-cover rounded-[2.5rem] shadow-2xl"
                 />
 
@@ -110,7 +110,7 @@ const Hero = () => {
                     transition={{ duration: 0.6, delay: 1 }}
                     className="bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-2 flex items-center gap-2.5 pr-4 shadow-xl shadow-black/10"
                   >
-                    <div className="bg-blue-50 p-1.5 rounded-full"><Award size={14} className="text-primary" /></div>
+                    <div className="bg-primary/10 p-1.5 rounded-full"><Award size={14} className="text-primary" /></div>
                     <div className="flex flex-col items-start leading-tight">
                       <span className="font-bold text-[13px] text-slate-800">100%</span>
                       <span className="text-[10px] font-medium text-slate-500">Satisfied</span>
@@ -125,9 +125,9 @@ const Hero = () => {
                     transition={{ duration: 0.6, delay: 1.2 }}
                     className="bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-2 flex items-center gap-2.5 pr-4 shadow-xl shadow-black/10"
                   >
-                    <div className="bg-cyan-50 p-1.5 rounded-full"><Star size={14} className="text-secondary" /></div>
+                    <div className="bg-secondary/15 p-1.5 rounded-full"><Star size={14} className="text-secondary" /></div>
                     <div className="flex flex-col items-start leading-tight">
-                      <span className="font-bold text-[13px] text-slate-800">10+ Years</span>
+                      <span className="font-bold text-[13px] text-slate-800">15+ Years</span>
                       <span className="text-[10px] font-medium text-slate-500">Experience</span>
                     </div>
                   </motion.div>
@@ -180,7 +180,7 @@ const Hero = () => {
                 >
                   <img
                     src={DUMMY_DOCTOR_IMAGE}
-                    alt="Dr. Pratik Giri"
+                    alt="Dr. Binay Mourya"
                     className="w-full h-full object-cover rounded-t-full object-top shadow-2xl border-4 border-white/50"
                     style={{ borderBottomLeftRadius: '2rem', borderBottomRightRadius: '2rem' }}
                   />
@@ -193,8 +193,8 @@ const Hero = () => {
                       transition={{ duration: 0.6, delay: 1 }}
                       className="glassmorphism rounded-2xl p-3 flex items-center gap-3 pr-6 shadow-lg shadow-black/5"
                     >
-                      <div className="bg-blue-50 p-2 rounded-full"><Award size={20} className="text-primary" /></div>
-                      <span className="font-semibold text-sm text-slate-800">10+ Years Exp</span>
+                      <div className="bg-primary/10 p-2 rounded-full"><Award size={20} className="text-primary" /></div>
+                      <span className="font-semibold text-sm text-slate-800">15+ Years Exp</span>
                     </motion.div>
                   </div>
 
@@ -205,8 +205,8 @@ const Hero = () => {
                       transition={{ duration: 0.6, delay: 1.2 }}
                       className="glassmorphism rounded-2xl p-3 flex items-center gap-3 pr-6 shadow-lg shadow-black/5"
                     >
-                      <div className="bg-cyan-50 p-2 rounded-full"><Star size={20} className="text-secondary" /></div>
-                      <span className="font-semibold text-sm text-slate-800">98% Satisfaction</span>
+                      <div className="bg-secondary/15 p-2 rounded-full"><Star size={20} className="text-secondary" /></div>
+                      <span className="font-semibold text-sm text-slate-800">100% Satisfaction</span>
                     </motion.div>
                   </div>
                 </motion.div>

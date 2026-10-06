@@ -4,18 +4,28 @@ import { MapPin, Phone, Clock, Send } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const SERVICES_EN = [
-  "Back Pain", "Cervical Pain", "Knee Pain", "Arthritis",
-  "Ligament Problem", "Paralysis", "Sciatica Pain", "Spondylitis",
-  "Frozen Shoulder", "Slip Disc", "Varicose Veins", "Cerebral Palsy (CP Child)", "Others",
+  "Gallbladder Stones (Cholecystectomy)", "Hernia Repair", "Appendicitis (Appendectomy)",
+  "Piles (Hemorrhoids)", "Fistula-in-Ano", "Anal Fissure",
+  "Thyroid Surgery", "Abdominal Tumors", "Gastric Disorders",
+  "Intestinal Obstruction", "General Surgery", "Others",
 ];
 
 const SERVICES_HI = [
-  "पीठ दर्द", "सर्वाइकल दर्द", "घुटने का दर्द", "गठिया",
-  "लिगामेंट समस्या", "पक्षाघात", "कटिस्नायुशूल दर्द", "स्पॉन्डिलाइटिस",
-  "फ्रोजन शोल्डर", "स्लिप डिस्क", "वेरिकोज़ वेन्स", "सेरेब्रल पाल्सी (CP Child)", "अन्य",
+  "पित्ताशय की पथरी (Laparoscopic Cholecystectomy)",
+  "हर्निया रिपेयर (Hernia Repair)",
+  "अपेंडिसाइटिस (Appendectomy)",
+  "बवासीर / पाइल्स (Piles / Hemorrhoids)",
+  "भगंदर (Fistula-in-Ano)",
+  "फिशर (Anal Fissure)",
+  "थायराइड सर्जरी (Thyroid Surgery)",
+  "पेट की गांठ / ट्यूमर (Abdominal Tumors)",
+  "गैस्ट्रिक और उदर रोग (Gastric Disorders)",
+  "आंतों की रुकावट (Intestinal Obstruction)",
+  "सामान्य एवं दूरबीन सर्जरी (General Surgery)",
+  "अन्य (Others)",
 ];
 
-const DOCTOR_WHATSAPP = "919753759805";
+const DOCTOR_WHATSAPP = "917523809746";
 
 const ContactSection = () => {
   const { isHindi } = useLanguage();
@@ -49,7 +59,7 @@ const ContactSection = () => {
     const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
 
     const text = [
-      `Hello Dr. Pratik Giri,`,
+      `Hello Dr. Binay Mourya,`,
       ``,
       `I would like to request an appointment.`,
       ``,
@@ -62,7 +72,7 @@ const ContactSection = () => {
       `Please let me know the available appointment slots.`,
       ``,
       `Thank you.`,
-      `_Sent via Dr. Pratik Giri's website._`,
+      `_Sent via Dr. Binay Mourya's website._`,
     ]
       .filter(line => line !== null)
       .join('\n');
@@ -83,7 +93,7 @@ const ContactSection = () => {
     <section id="contact" className="py-12 sm:py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
@@ -143,8 +153,7 @@ const ContactSection = () => {
                       {isHindi ? 'संपर्क नंबर' : 'Contact Numbers'}
                     </h4>
                     <div className="flex flex-col gap-1">
-                      <a href="tel:9753759805" className="text-slate-400 hover:text-primary transition-colors text-lg">9753759805</a>
-                      <a href="tel:9118739746" className="text-slate-400 hover:text-primary transition-colors text-lg">9118739746</a>
+                      <a href="tel:7523809746" className="text-slate-400 hover:text-primary transition-colors text-lg">+91 7523809746</a>
                     </div>
                   </div>
                 </div>
@@ -158,7 +167,7 @@ const ContactSection = () => {
                       {isHindi ? 'कार्य समय' : 'Working Hours'}
                     </h4>
                     <p className="text-slate-400">
-                      {isHindi ? <>सोमवार - शनिवार<br />सुबह 11:00 - शाम 6:00</> : <>Monday - Saturday<br />11:00 AM - 6:00 PM</>}
+                      {isHindi ? <>सोमवार - शनिवार<br />सुबह 9:00 - शाम 5:00</> : <>Monday - Saturday<br />9:00 AM - 5:00 PM</>}
                     </p>
                   </div>
                 </div>
@@ -291,8 +300,8 @@ const ContactSection = () => {
 
                   <p className="text-center text-xs text-slate-400">
                     {isHindi
-                      ? <>सबमिट करने पर WhatsApp खुलेगा जिसमें आपका विवरण पहले से भरा होगा।{' '}<span className="font-medium text-slate-600">+91 97537 59805</span></>
-                      : <>Tapping submit will open WhatsApp with your details pre-filled on{' '}<span className="font-medium text-slate-600">+91 97537 59805</span>.</>}
+                      ? <>सबमिट करने पर WhatsApp खुलेगा जिसमें आपका विवरण पहले से भरा होगा।{' '}<span className="font-medium text-slate-600">+91 75238 09746</span></>
+                      : <>Tapping submit will open WhatsApp with your details pre-filled on{' '}<span className="font-medium text-slate-600">+91 75238 09746</span>.</>}
                   </p>
                 </form>
               </>

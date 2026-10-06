@@ -8,28 +8,28 @@ const StatsSection = () => {
 
   const stats = [
     {
-      label: isHindi ? 'निदान' : 'DIAGNOSTICS',
-      value: '99.4%',
+      label: isHindi ? 'सर्जरीयां संपन्न' : 'SURGERIES PERFORMED',
+      value: '5000+',
       description: isHindi
-        ? 'सटीक बायोमैकेनिकल आकलन के माध्यम से निदान की सटीकता।'
-        : 'Diagnostic accuracy through precision biomechanical assessment.',
-      icon: <BarChart2 size={32} strokeWidth={2.5} className="text-[#00BCD4]" />,
+        ? 'आधुनिक तकनीकों से सफलतापूर्वक संपन्न सर्जिकल प्रक्रियाएं।'
+        : 'Successfully completed surgical procedures using modern techniques.',
+      icon: <BarChart2 size={32} strokeWidth={2.5} className="text-primary" />,
     },
     {
-      label: isHindi ? 'रिकवरी दर' : 'RECOVERY RATE',
-      value: '3.2x',
+      label: isHindi ? 'अनुभव के वर्ष' : 'YEARS OF EXPERIENCE',
+      value: '15+',
       description: isHindi
-        ? 'उद्योग मानकों की तुलना में खेल में औसत वापसी का समय तेज।'
-        : 'Faster average return to sport time compared to industry benchmarks.',
-      icon: <TrendingUp size={32} strokeWidth={2.5} className="text-blue-700" />,
+        ? 'सामान्य एवं लैप्रोस्कोपिक सर्जरी में विशेषज्ञता।'
+        : 'Specializing in general & laparoscopic surgery since 2004.',
+      icon: <TrendingUp size={32} strokeWidth={2.5} className="text-secondary" />,
     },
     {
-      label: isHindi ? 'उपचार योजनाएं' : 'TREATMENT PLANS',
-      value: '100%',
+      label: isHindi ? 'सफलता दर' : 'SUCCESS RATE',
+      value: '99%+',
       description: isHindi
-        ? 'आपकी व्यक्तिगत जरूरत के अनुसार पूरी तरह अनुकूलित पुनर्वास पथ।'
-        : 'Fully customized rehabilitative paths tailored to your genetic profile.',
-      icon: <Columns size={32} strokeWidth={2.5} className="text-[#00BCD4]" />,
+        ? 'उच्च सफलता दर और रोगी संतुष्टि के साथ स्वास्थ्य यात्रा।'
+        : 'Outstanding surgical success rate with high patient satisfaction scores.',
+      icon: <Columns size={32} strokeWidth={2.5} className="text-primary" />,
     },
   ];
 

@@ -2,6 +2,50 @@ import React, { useState, useEffect } from 'react';
 import { X, Play, ChevronLeft, ChevronRight, Image as ImageIcon, Video, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import cabin1 from '../assets/cabin_1.jpg';
+import labs1 from '../assets/labs_1.jpg';
+import ot1 from '../assets/OT_1.jpg';
+import ot6 from '../assets/OT_6.jpg';
+
+// ─── Facility & Clinic Photos ────────────────────────────────────────────────
+const FACILITY_ITEMS = [
+  {
+    id: 'fac-cabin-1',
+    type: 'image',
+    src: cabin1,
+    thumb: cabin1,
+    titleEn: "Doctor's Consultation Cabin",
+    captionEn: "Doctor's Consultation Cabin — Dr. Binay Mourya",
+    captionHi: 'डॉक्टर परामर्श कक्ष — डॉ. बिनय मौर्य',
+  },
+  {
+    id: 'fac-ot-1',
+    type: 'image',
+    src: ot1,
+    thumb: ot1,
+    titleEn: 'Operation Theatre (OT 1)',
+    captionEn: 'Advanced Modular Operation Theatre (OT 1)',
+    captionHi: 'अत्याधुनिक मॉड्यूलर ऑपरेशन थिएटर (ओ.टी. 1)',
+  },
+  {
+    id: 'fac-ot-6',
+    type: 'image',
+    src: ot6,
+    thumb: ot6,
+    titleEn: 'Surgical Station (OT 6)',
+    captionEn: 'Operation Theatre Surgical Station & Laparoscopic Care (OT 6)',
+    captionHi: 'ऑपरेशन थिएटर सर्जिकल स्टेशन एवं लैप्रोस्कोपिक सेटअप (ओ.टी. 6)',
+  },
+  {
+    id: 'fac-labs-1',
+    type: 'image',
+    src: labs1,
+    thumb: labs1,
+    titleEn: 'Clinical & Lab Setup',
+    captionEn: 'Diagnostic, Laboratory & Therapy Equipment',
+    captionHi: 'नैदानिक प्रयोगशाला एवं थेरेपी उपकरण',
+  },
+];
 
 // ─── Image assets (auto-picked from assets folder) ────────────────────────────
 const reviewGlob = import.meta.glob(
@@ -9,16 +53,19 @@ const reviewGlob = import.meta.glob(
   { eager: true }
 );
 
-const IMAGE_ITEMS = Object.entries(reviewGlob)
+const REVIEW_ITEMS = Object.entries(reviewGlob)
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
   .map(([path, mod], i) => ({
-    id: `img-${i + 1}`,
+    id: `img-rev-${i + 1}`,
     type: 'image',
     src: mod.default,
     thumb: mod.default,
-    captionEn: `Patient review ${i + 1}`,
-    captionHi: `मरीज़ समीक्षा ${i + 1}`,
+    titleEn: `Patient Review ${i + 1}`,
+    captionEn: `Hospital & Patient Care Review ${i + 1}`,
+    captionHi: `अस्पताल एवं मरीज़ समीक्षा ${i + 1}`,
   }));
+
+const IMAGE_ITEMS = [...FACILITY_ITEMS, ...REVIEW_ITEMS];
 
 // ─── Custom hook: fetch video list from our Netlify proxy function ─────────────
 // Captions come from each video's Context metadata in Cloudinary (caption_en, caption_hi).
@@ -91,7 +138,7 @@ const ImageThumbCard = ({ item, onClick }) => (
     layout
     initial={{ opacity: 0, scale: 0.9 }}
     animate={{ opacity: 1, scale: 1 }}
-    className="relative rounded-2xl overflow-hidden cursor-pointer group aspect-square bg-slate-100"
+    className="relative rounded-2xl overflow-hidden cursor-pointer group aspect-square bg-slate-100 border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
     onClick={onClick}
   >
     <img
@@ -99,7 +146,12 @@ const ImageThumbCard = ({ item, onClick }) => (
       alt={item.captionEn}
       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
     />
-    <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/40 transition-colors duration-300 flex items-center justify-center">
+    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2.5">
+      <p className="text-white text-xs font-medium line-clamp-2">
+        {item.titleEn || item.captionEn}
+      </p>
+    </div>
+    <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-300 flex items-center justify-center">
       <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 shadow-lg">
         <ImageIcon size={16} className="text-primary" />
       </div>
@@ -177,7 +229,7 @@ const Lightbox = ({ items, startIndex, onClose }) => {
             />
           )}
 
-          {/* Caption panel — only for videos, prominently displayed */}
+          {/* Caption panel — for videos */}
           {item.type === 'video' && caption && (
             <div className="w-full bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-b-2xl px-5 py-4">
               <div className="flex items-start gap-3">
@@ -191,9 +243,13 @@ const Lightbox = ({ items, startIndex, onClose }) => {
             </div>
           )}
 
-          {/* Caption for images (lighter style) */}
+          {/* Caption for images */}
           {item.type === 'image' && caption && (
-            <p className="text-center text-white/60 text-sm mt-4">{caption}</p>
+            <div className="w-full bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-3 mt-3">
+              <p className="text-center text-white/90 text-sm md:text-base font-medium leading-relaxed">
+                {caption}
+              </p>
+            </div>
           )}
         </motion.div>
       </AnimatePresence>
@@ -249,7 +305,7 @@ const GalleryModal = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-slate-100 flex-shrink-0">
             <div>
               <h3 className="text-xl font-bold text-slate-800">
-                {isHindi ? 'मरीज़ गैलरी' : 'Patient Gallery'}
+                {isHindi ? 'अस्पताल एवं मरीज़ गैलरी' : 'Hospital & Patient Gallery'}
               </h3>
               <p className="text-sm text-slate-500 mt-0.5">
                 {isHindi
@@ -267,27 +323,31 @@ const GalleryModal = ({ isOpen, onClose }) => {
 
           {/* Section label: Videos */}
           <div className="overflow-y-auto p-4 sm:p-6">
-            <div className="flex items-center gap-2 mb-3">
-              <Video size={14} className="text-primary" />
-              <span className="text-xs font-bold tracking-widest text-primary uppercase">
-                {isHindi ? 'मरीज़ वीडियो' : 'Patient Videos'}
-              </span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-              {GALLERY_ITEMS.filter(i => i.type === 'video').map((item, i) => (
-                <ThumbCard
-                  key={item.id}
-                  item={item}
-                  onClick={() => setLightboxIndex(GALLERY_ITEMS.indexOf(item))}
-                />
-              ))}
-            </div>
+            {videoItems.length > 0 && (
+              <>
+                <div className="flex items-center gap-2 mb-3">
+                  <Video size={14} className="text-primary" />
+                  <span className="text-xs font-bold tracking-widest text-primary uppercase">
+                    {isHindi ? 'मरीज़ वीडियो' : 'Patient Videos'}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                  {GALLERY_ITEMS.filter(i => i.type === 'video').map((item, i) => (
+                    <ThumbCard
+                      key={item.id}
+                      item={item}
+                      onClick={() => setLightboxIndex(GALLERY_ITEMS.indexOf(item))}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
 
             {/* Section label: Photos */}
             <div className="flex items-center gap-2 mb-3">
               <ImageIcon size={14} className="text-primary" />
               <span className="text-xs font-bold tracking-widest text-primary uppercase">
-                {isHindi ? 'मरीज़ फ़ोटो' : 'Patient Photos'}
+                {isHindi ? 'अस्पताल सुविधाएं एवं फ़ोटो' : 'Hospital Facilities & Photos'}
               </span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

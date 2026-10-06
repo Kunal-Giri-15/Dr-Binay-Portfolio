@@ -28,21 +28,21 @@ const AboutSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0 group">
               <img
                 src={DUMMY_DOCTOR_IMAGE}
-                alt="Dr. Pratik Giri"
+                alt="Dr. Binay Mourya"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
 
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-1">Dr. Pratik Giri</h3>
+                  <h3 className="text-2xl font-bold text-white mb-1">Dr. Binay Mourya</h3>
                   <p className="text-white/80 font-medium text-sm mb-3">
-                    {isHindi ? 'फिजियोथेरेपिस्ट' : 'Physiotherapist'}
+                    {isHindi ? 'चीफ सर्जन और संस्थापक' : 'Chief Surgeon & Founder'}
                   </p>
                   <p className="text-white/90 text-xs leading-relaxed border-t border-white/20 pt-3">
                     {isHindi
-                      ? 'पूर्व वरिष्ठ फिजियोथेरेपिस्ट\nयूनिवर्सल हॉस्पिटल मुंबई'
-                      : <>Ex. Senior Physiotherapist<br />Universal Hospital Mumbai</>}
+                      ? 'विश्वास सर्जिकल हॉस्पिटल, राजगढ़, मिर्जापुर'
+                      : <>Vishwas Surgical Hospital<br />Rajgarh, Mirzapur, UP</>}
                   </p>
                 </div>
               </div>
@@ -68,35 +68,35 @@ const AboutSection = () => {
             <h2 className="text-[28px] sm:text-4xl md:text-5xl font-bold text-slate-800 mb-5 md:mb-8 leading-[1.15]">
               {isHindi
                 ? <>आपकी <br /><span className="text-primary">पूर्ण रिकवरी</span> के लिए समर्पित</>
-                : <>Dedicated to Your <br /><span className="text-primary">Complete Recovery</span></>}
+                : <>Dedicated to Your <br /><span className="text-primary">Surgical Care</span></>}
             </h2>
 
             <div className="relative mb-6 md:mb-10 bg-slate-50 rounded-2xl p-5 md:p-8 border-l-4 border-primary shadow-sm">
               <Quote className="absolute top-3 right-3 text-slate-200/50" size={40} />
               <p className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-slate-700 font-medium leading-relaxed italic relative z-10 pr-4">
                 {isHindi
-                  ? '"हमारा प्रीमियर फिजियोथेरेपी क्लिनिक आपकी रिकवरी का साझेदार है, जो आपको दर्दमुक्त जीवन और नई ऊर्जा की ओर ले जाता है।"'
-                  : '"Our premier physiotherapy clinic is your partner in recovery, guiding you towards a life of pain-free movement and renewed energy."'}
+                  ? '"\u092e\u0948\u0902\u0928\u0947 \u092f\u0939 \u0905\u0938\u094d\u092a\u0924\u093e\u0932 \u0907\u0938\u0932\u093f\u090f \u0936\u0941\u0930\u0942 \u0915\u093f\u092f\u093e \u0915\u094d\u092f\u094b\u0902\u0915\u093f \u092e\u0948\u0902 \u091a\u093e\u0939\u0924\u093e \u0925\u093e \u0915\u093f \u092e\u0947\u0930\u0947 \u092a\u0921\u093c\u094b\u0938\u093f\u092f\u094b\u0902 \u0915\u094b \u0935\u0939\u0940 \u0926\u0947\u0916\u092d\u093e\u0932 \u092e\u093f\u0932\u0947 \u091c\u094b \u092e\u0948\u0902 \u090f\u0915 \u092e\u0939\u093e\u0928\u0917\u0930 \u092e\u0947\u0902 \u0926\u0947 \u0938\u0915\u0924\u093e \u0925\u093e\u0964"'
+                  : '"I began this hospital because I wanted my neighbours to have access to the same standard of care I could offer in a metro. Every day since, I\'ve tried to keep one promise: to treat every patient the way I\'d want my own family to be treated."'}
               </p>
             </div>
 
             <p className="text-slate-600 leading-relaxed mb-6 md:mb-8 text-[15px] md:text-lg">
               {isHindi
-                ? 'जटिल पुनर्वास और रोजमर्रा की गतिशीलता समस्याओं में व्यापक अनुभव के साथ, डॉ. प्रतीक गिरी मुंबई के यूनिवर्सल हॉस्पिटल में वरिष्ठ फिजियोथेरेपिस्ट के रूप में अपने कार्यकाल से विशेषज्ञता लेकर आते हैं।'
-                : 'With extensive experience spanning complex rehabilitations and everyday mobility issues, Dr. Pratik Giri brings a wealth of expertise from his tenure as a Senior Physiotherapist at Universal Hospital, Mumbai.'}
+                ? 'सामान्य एवं लैप्रोस्कोपिक सर्जरी में 15 वर्षों से अधिक अनुभव के साथ, डॉ. बिनय मौर्य ने 2004 में विश्वास सर्जिकल हॉस्पिटल की स्थापना की, ताकि राजगढ़ और आसपास के लोगों को आधुनिक शल्य चिकित्सा वहीं मिल सके।'
+                : 'With over 15 years of surgical experience, Dr. Binay Mourya founded Vishwas Surgical Hospital in 2004, bringing evidence-based surgical care to Rajgarh, Mirzapur — so families never have to travel to distant cities for quality treatment.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center gap-3">
                 <div className="bg-green-100 text-green-600 rounded-full p-1"><CheckCircle size={20} /></div>
                 <span className="text-slate-700 font-medium">
-                  {isHindi ? 'विशेषज्ञ निदान' : 'Expert Diagnosis'}
+                  {isHindi ? 'न्यूनतम आक्रामक सर्जरी' : 'Minimally Invasive Surgery'}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="bg-blue-100 text-blue-600 rounded-full p-1"><CheckCircle size={20} /></div>
+                <div className="bg-primary/10 text-primary rounded-full p-1"><CheckCircle size={20} /></div>
                 <span className="text-slate-700 font-medium">
-                  {isHindi ? 'व्यक्तिगत देखभाल' : 'Personalized Care'}
+                  {isHindi ? '24/7 आपातकालीन सेवा' : '24/7 Emergency Care'}
                 </span>
               </div>
             </div>

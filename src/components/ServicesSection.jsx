@@ -1,63 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Activity, 
-  Hand, 
-  Zap, 
+  Scissors, 
+  Microscope, 
   HeartPulse, 
-  Dumbbell, 
+  Activity,
   CheckCircle2,
-  Stethoscope
+  Stethoscope,
+  Zap
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const DUMMY_SERVICES_IMAGE = "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80";
+const DUMMY_SERVICES_IMAGE = "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=800&q=80";
 
 const ServicesSection = () => {
   const { isHindi } = useLanguage();
 
   const services = [
     {
-      title: isHindi ? 'मैनुअल थेरेपी' : 'Manual Therapy',
+      title: isHindi ? 'लैप्रोस्कोपिक कोलेसिस्टेक्टॉमी' : 'Laparoscopic Cholecystectomy',
       description: isHindi
-        ? 'जोड़ों और मुलायम ऊतकों को गतिशील करने की व्यावहारिक तकनीकें, दर्द कम करती हैं और गति की सीमा बढ़ाती हैं।'
-        : 'Hands-on techniques to mobilize joints and soft tissues, reducing pain and increasing range of motion.',
-      icon: Hand,
-      color: 'from-blue-500 to-cyan-400',
+        ? 'न्यूनतम चीरे से पित्ताशय की थैली को निकालना। तेज़ रिकवरी, कम दर्द और बेहतर परिणाम।'
+        : 'Minimally invasive gallbladder removal surgery. Faster recovery, less pain, and excellent outcomes.',
+      icon: Scissors,
+      color: 'from-[#0D5C58] to-[#14B8A6]',
     },
     {
-      title: isHindi ? 'शारीरिक मोडेलिटीज़' : 'Physical Modalities',
+      title: isHindi ? 'हर्निया रिपेयर' : 'Hernia Repair',
       description: isHindi
-        ? 'उपचार को उत्तेजित करने और सूजन कम करने के लिए उन्नत तकनीकी उपचार।'
-        : 'Advanced technological treatments to stimulate healing and reduce inflammation.',
+        ? 'लैप्रोस्कोपिक तकनीक द्वारा हर्निया की पूरी तरह सुरक्षित और प्रभावी सर्जरी।'
+        : 'Safe and effective laparoscopic hernia repair with minimal downtime and strong outcomes.',
+      icon: Activity,
+      color: 'from-[#0A4D4A] to-[#0D5C58]',
+    },
+    {
+      title: isHindi ? 'अपेंडेक्टॉमी' : 'Appendectomy',
+      description: isHindi
+        ? 'तीव्र और जीर्ण दोनों प्रकार के अपेंडिसाइटिस के लिए तत्काल और सुरक्षित सर्जरी।'
+        : 'Prompt and safe appendix removal for both acute and chronic appendicitis cases.',
       icon: Zap,
-      color: 'from-indigo-500 to-blue-500',
+      color: 'from-[#0F766E] to-[#059669]',
     },
     {
-      title: isHindi ? 'चिकित्सीय व्यायाम' : 'Therapeutic Exercise',
+      title: isHindi ? 'पाइल्स / फिस्टुला / फिशर उपचार' : 'Piles / Fistula / Fissure',
       description: isHindi
-        ? 'शक्ति और लचीलापन बढ़ाने और भविष्य की चोटों को रोकने के लिए अनुकूलित व्यायाम योजनाएं।'
-        : 'Customized movement plans to build strength, flexibility, and prevent future injuries.',
-      icon: Dumbbell,
-      color: 'from-teal-500 to-emerald-400',
-    },
-    {
-      title: isHindi ? 'दर्द प्रबंधन' : 'Pain Management',
-      description: isHindi
-        ? 'पुराने और तीव्र दर्द से दीर्घकालिक राहत पर केंद्रित व्यापक रणनीतियां।'
-        : 'Comprehensive strategies focusing on long-term relief from chronic and acute pain.',
+        ? 'बवासीर, भगंदर और गुदा दरार के लिए आधुनिक एवं दर्दरहित उपचार।'
+        : 'Modern, painless treatment for piles, fistula, and anal fissure conditions.',
       icon: HeartPulse,
-      color: 'from-rose-500 to-orange-400',
+      color: 'from-[#B45309] to-[#D97706]',
+    },
+    {
+      title: isHindi ? 'थायरॉइड सर्जरी' : 'Thyroid Surgery',
+      description: isHindi
+        ? 'थायरॉइड ग्रंथि की समस्याओं के लिए सटीक और सुरक्षित सर्जिकल हस्तक्षेप।'
+        : 'Precise and safe surgical intervention for thyroid gland disorders.',
+      icon: Microscope,
+      color: 'from-[#1E3A4C] to-[#0D5C58]',
     },
   ];
 
   const conditions = isHindi
-    ? ['पीठ दर्द', 'सर्वाइकल दर्द', 'घुटने का दर्द', 'गठिया',
-       'लिगामेंट समस्या', 'पक्षाघात', 'कटिस्नायुशूल दर्द', 'स्पॉन्डिलाइटिस',
-       'फ्रोजन शोल्डर', 'स्लिप डिस्क', 'वेरिकोज़ वेन्स', 'सेरेब्रल पाल्सी (CP)']
-    : ['Back Pain', 'Cervical Pain', 'Knee Pain', 'Arthritis',
-       'Ligament Problem', 'Paralysis', 'Sciatica Pain', 'Spondylitis',
-       'Frozen Shoulder', 'Slip Disc', 'Varicose Veins', 'Cerebral Palsy (CP Child)'];
+    ? ['पित्त की थैली की पथरी', 'हर्निया', 'अपेंडिसाइटिस', 'बवासीर (पाइल्स)',
+       'भगंदर (फिस्टुला)', 'गुदा दरार (फिशर)', 'थायरॉइड ट्यूमर', 'पेट के ट्यूमर',
+       'गैस्ट्रिक समस्याएं', 'आंत्र रुकावट', 'लिम्फ नोड बायोप्सी', 'सामान्य सर्जरी']
+    : ['Gallbladder Stones', 'Hernia', 'Appendicitis', 'Piles (Hemorrhoids)',
+       'Fistula-in-Ano', 'Anal Fissure', 'Thyroid Tumors', 'Abdominal Tumors',
+       'Gastric Disorders', 'Intestinal Obstruction', 'Lymph Node Biopsy', 'General Surgery'];
 
   return (
     <section id="services" className="py-16 md:py-24 bg-slate-50 relative">
@@ -99,7 +107,7 @@ const ServicesSection = () => {
             className="mb-3 md:mb-4 text-xs md:text-sm font-semibold tracking-[0.2em] text-primary uppercase flex items-center justify-center gap-2"
           >
             <span className="w-6 md:w-8 h-px bg-primary"></span>
-            {isHindi ? 'हमारी बेहतरीन सेवाएं' : 'Our Best Services'}
+            {isHindi ? 'हमारी बेहतरीन सेवाएं' : 'Our Surgical Services'}
             <span className="w-6 md:w-8 h-px bg-primary"></span>
           </motion.div>
           <motion.h2 
@@ -110,8 +118,8 @@ const ServicesSection = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 md:mb-6 leading-tight"
           >
             {isHindi
-              ? <>आपकी सेहत के लिए <br className="hidden sm:block"/>व्यापक देखभाल</>
-              : <>Comprehensive Care for <br className="hidden sm:block"/>Your Well-being</>}
+              ? <>आपकी सेहत के लिए <br className="hidden sm:block"/>विशेषज्ञ सर्जिकल देखभाल</>
+              : <>Expert Surgical Care for <br className="hidden sm:block"/>Your Well-being</>}
           </motion.h2>
         </div>
 
@@ -162,23 +170,23 @@ const ServicesSection = () => {
             {/* Title & Image Area */}
             <div className="lg:col-span-1">
               <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3 md:mb-4">
-                {isHindi ? 'दिए जाने वाले उपचार' : 'Treatments Given'}
+                {isHindi ? 'उपचारित स्थितियां' : 'Conditions Treated'}
               </h3>
               <p className="text-slate-600 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">
                 {isHindi
-                  ? 'हम विभिन्न शारीरिक स्थितियों के निदान और उपचार में विशेषज्ञ हैं। हमारा लक्ष्य लक्षित, विशेषज्ञ देखभाल के माध्यम से आपकी गतिशीलता बहाल करना और दर्द कम करना है।'
-                  : 'We specialize in diagnosing and treating a wide array of physical conditions. Our goal is to restore your mobility and alleviate pain through targeted, expert care.'}
+                  ? 'हम विभिन्न सर्जिकल स्थितियों के निदान और उपचार में विशेषज्ञ हैं। HD 3-चिप लैप्रोस्कोपी एवं हार्मोनिक स्कैल्पेल जैसी आधुनिक तकनीकों से सर्वोत्तम देखभाल प्रदान करते हैं।'
+                  : 'We specialize in diagnosing and treating a wide range of surgical conditions using advanced equipment — HD 3-Chip Laparoscopy Stack, Harmonic Scalpel, and Modular Laminar-Flow OT.'}
               </p>
               
               <div className="relative rounded-2xl overflow-hidden shadow-lg h-48 md:h-64 group hidden sm:block">
                 <img 
                   src={DUMMY_SERVICES_IMAGE} 
-                  alt="Physiotherapy Treatment" 
+                  alt="Surgical Treatment" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
                   <span className="text-white font-semibold text-lg">
-                    {isHindi ? 'विशेषज्ञ उपचार हाथ' : 'Expert Healing Hands'}
+                    {isHindi ? 'उन्नत सर्जिकल देखभाल' : 'Advanced Surgical Care'}
                   </span>
                 </div>
               </div>

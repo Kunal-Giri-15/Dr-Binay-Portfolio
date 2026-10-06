@@ -45,7 +45,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <a href="#home" className="text-xl md:text-2xl font-poppins font-bold text-primary leading-tight">
-            Dr. Pratik Giri<span className="text-secondary"></span>
+            Dr. Binay Mourya<span className="text-secondary">.</span>
           </a>
 
           {/* Desktop Links */}
@@ -182,9 +182,9 @@ const Navbar = () => {
 
                 {/* Contact quick-info */}
                 <p className="text-center text-xs text-slate-400 mt-3 font-medium">
-                  📞 <a href="tel:9753759805" className="text-primary hover:underline">97537 59805</a>
+                  📞 <a href="tel:7523809746" className="text-primary hover:underline">75238 09746</a>
                   <span className="mx-2 text-slate-200">|</span>
-                  {isHindi ? 'सोम–शनि · सुबह 11 – शाम 6' : 'Mon–Sat · 11 AM – 6 PM'}
+                  {isHindi ? 'सोम–शनि · सुबह 9 – शाम 5' : 'Mon–Sat · 9 AM – 5 PM'}
                 </p>
               </motion.div>
             </motion.div>
